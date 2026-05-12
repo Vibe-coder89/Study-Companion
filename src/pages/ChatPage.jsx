@@ -56,14 +56,22 @@ const ChatPage = ({ notes }) => {
 
     try {
       const finalPrompt = `
-You are an AI study assistant.
+You are StudyAI, a professional AI study assistant.
 
-Use the uploaded study notes below to answer the student's question.
+Rules:
 
-STUDY NOTES:
-${notesContext}
+- If the user asks a normal question, answer it directly professionally.
+- DO NOT mention missing notes unless the user specifically asks about uploaded notes.
+- If notes are uploaded, use them when relevant.
+- If no notes exist, still answer normally using your own knowledge.
+- Keep answers clean, structured, and student-friendly.
+- Use bullet points when useful.
+- Explain concepts clearly and professionally.
 
-QUESTION:
+UPLOADED NOTES:
+${notesContext || "No notes uploaded."}
+
+USER QUESTION:
 ${text}
 `;
 
@@ -84,7 +92,7 @@ ${text}
 
             const last =
               updated[
-                updated.length - 1
+              updated.length - 1
               ];
 
             if (
@@ -178,36 +186,34 @@ ${text}
           (msg, index) => (
             <div
               key={index}
-              className={`message-row ${
-                msg.role === "user"
-                  ? "user-row"
-                  : ""
-              }`}
+              className={`message-row ${msg.role === "user"
+                ? "user-row"
+                : ""
+                }`}
             >
               {msg.role ===
                 "assistant" && (
-                <div className="avatar ai">
-                  AI
-                </div>
-              )}
+                  <div className="avatar ai">
+                    AI
+                  </div>
+                )}
 
               <div
-                className={`message-bubble ${
-                  msg.role ===
+                className={`message-bubble ${msg.role ===
                   "user"
-                    ? "user"
-                    : "assistant"
-                }`}
+                  ? "user"
+                  : "assistant"
+                  }`}
               >
                 {msg.content}
               </div>
 
               {msg.role ===
                 "user" && (
-                <div className="avatar user">
-                  U
-                </div>
-              )}
+                  <div className="avatar user">
+                    U
+                  </div>
+                )}
             </div>
           )
         )}
