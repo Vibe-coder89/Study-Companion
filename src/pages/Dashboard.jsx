@@ -14,9 +14,9 @@ export default function Dashboard({
             {/* HEADER */}
 
             <div className="page-header">
-                <div className="gradient-badge">
+                {/* <div className="gradient-badge">
                     Welcome Back
-                </div>
+                </div> */}
 
                 <h1 className="page-title">
                     Your Study Dashboard
@@ -57,7 +57,7 @@ export default function Dashboard({
                     <p>Topics Studied</p>
                 </div>
 
-                <div className="stat-card">
+                {/* <div className="stat-card">
                     <div className="stat-icon cyan">
                         <Icon
                             name="brain"
@@ -68,7 +68,7 @@ export default function Dashboard({
                     <h2>{notes.length}</h2>
 
                     <p>AI Sessions</p>
-                </div>
+                </div> */}
             </div>
 
             {/* FEATURES */}
@@ -80,12 +80,12 @@ export default function Dashboard({
                         setPage("chat")
                     }
                 >
-                    <div className="feature-icon">
+                    {/* <div className="feature-icon">
                         <Icon
                             name="chat"
                             size={24}
                         />
-                    </div>
+                    </div> */}
 
                     <div>
                         <h3>
@@ -106,12 +106,12 @@ export default function Dashboard({
                         setPage("quiz")
                     }
                 >
-                    <div className="feature-icon">
+                    {/* <div className="feature-icon">
                         <Icon
                             name="quiz"
                             size={24}
                         />
-                    </div>
+                    </div> */}
 
                     <div>
                         <h3>
@@ -131,12 +131,12 @@ export default function Dashboard({
                         setPage("flashcards")
                     }
                 >
-                    <div className="feature-icon">
+                    {/* <div className="feature-icon">
                         <Icon
                             name="flashcards"
                             size={24}
                         />
-                    </div>
+                    </div> */}
 
                     <div>
                         <h3>Flashcards</h3>
@@ -154,12 +154,12 @@ export default function Dashboard({
                         setPage("summary")
                     }
                 >
-                    <div className="feature-icon">
+                    {/* <div className="feature-icon">
                         <Icon
                             name="file"
                             size={24}
                         />
-                    </div>
+                    </div> */}
 
                     <div>
                         <h3>AI Summarizer</h3>
